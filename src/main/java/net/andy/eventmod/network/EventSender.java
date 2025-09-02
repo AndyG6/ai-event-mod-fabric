@@ -66,7 +66,7 @@ public class EventSender {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(SERVER_URL + "/memory/clear"))
                     .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.ofString("{}"))
+                    .DELETE()
                     .build();
 
             client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
